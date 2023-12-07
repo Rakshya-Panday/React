@@ -1,4 +1,4 @@
-import conf from '../conf.js';
+import conf from '../conf/conf.js';
 import { Client, Account, ID,Databases,Storage,Query } from "appwrite";
 
 
@@ -41,7 +41,7 @@ export class Service{
                 conf.appwriteCollectionId,
                 slug,
                 {
-                    title.
+                    title,
                     content,
                     featuredImage,
                     status
