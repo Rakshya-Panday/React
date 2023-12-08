@@ -67,6 +67,10 @@ const Login = () => {
             
           })}
           />
+
+          <Button
+          type = "submit"
+          >Sign In</Button>
           </div>
         </form>
 
