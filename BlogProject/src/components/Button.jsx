@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Button = ({
+ const Button = ({
     children,
     type= 'button',
     bgColor ='bg-blue-600',
@@ -14,3 +14,5 @@ export const Button = ({
   </button>
   )
 }
+
+export default Button;
