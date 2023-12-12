@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react'
 import appwriteService from "../appwrite/config";
 import { PostCard,Container } from '../components';
 
-export const AllPost = () => {
+ const AllPost = () => {
 
     const[posts,setPosts] = useState([])
     useEffect(()=>{
@@ -28,3 +28,5 @@ export const AllPost = () => {
     </div>
   )
 }
+
+export default AllPost

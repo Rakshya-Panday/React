@@ -2,7 +2,7 @@ import React ,{useEffect,useState}from 'react'
 import appwriteService from "../appwrite/config";
 import { PostCard,Container } from '../components';
 
-export const Home = () => {
+ const Home = () => {
 
     const[posts,setPosts] = useState([])
     useEffect(()=>{
@@ -45,3 +45,5 @@ export const Home = () => {
     )
   
 }
+
+export default Home;
