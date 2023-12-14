@@ -1,12 +1,11 @@
-import React,{useCallback} from 'react'
-import {useForm} from 'react-hook-form'
-import {Button,Input,Select,RTE} from '../index'
-import appwriteService from '../../appwrite/config';
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useCallback } from "react";
+import { useForm } from "react-hook-form";
+import { Button, Input, RTE, Select } from "..";
+import appwriteService from "../../appwrite/config";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
- const PostForm = ({post}) => {
-
+export default function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
             title: post?.title || "",
@@ -73,17 +72,17 @@ import { useSelector } from 'react-redux';
 
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-            <div className="w-2/3 px-2">
+            <div className="w-2/3  px-5">
                 <Input
                     label="Title :"
                     placeholder="Title"
-                    className="mb-4"
+                    className="mb-4 m-4 p-4 w-5/6"
                     {...register("title", { required: true })}
                 />
                 <Input
                     label="Slug :"
                     placeholder="Slug"
-                    className="mb-4"
+                    className="mb-8 w-5/6"
                     {...register("slug", { required: true })}
                     onInput={(e) => {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
@@ -95,12 +94,12 @@ import { useSelector } from 'react-redux';
                 <Input
                     label="Featured Image :"
                     type="file"
-                    className="mb-4"
+                    className="mb-5"
                     accept="image/png, image/jpg, image/jpeg, image/gif"
                     {...register("image", { required: !post })}
                 />
                 {post && (
-                    <div className="w-full mb-4">
+                    <div className="w-full mb-8">
                         <img
                             src={appwriteService.getFilePreview(post.featuredImage)}
                             alt={post.title}
@@ -111,7 +110,7 @@ import { useSelector } from 'react-redux';
                 <Select
                     options={["active", "inactive"]}
                     label="Status"
-                    className="mb-4"
+                    className="mb-4 mt-6"
                     {...register("status", { required: true })}
                 />
                 <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
@@ -120,7 +119,4 @@ import { useSelector } from 'react-redux';
             </div>
         </form>
     );
-    
 }
-
-export default PostForm

@@ -9,7 +9,7 @@ import React from 'react'
     ...props
 }) => {
   return (
-  <button className={`px-4 py-2 roubded-lg ${className}${bgColor} ${textColor}`}{...props}>
+  <button className={`p-4 m-4  ml-0 py-2 rounded-lg font-bold w-full bg-blue-500 ${className}${bgColor} ${textColor}`}{...props}>
     {children}
   </button>
   )
