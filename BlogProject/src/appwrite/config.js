@@ -149,4 +149,3 @@ export class Service{
 const service = new Service()
 export default service
 
-// 657087769543381281e2
